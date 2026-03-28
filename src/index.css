@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #ff385c;
+  --color-brand-hover: #e31c5f;
+  --color-surface: #ffffff;
+  --color-muted: #717171;
+  --color-border: #dddddd;
+  --color-bg-soft: #f7f7f7;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-[var(--color-bg-soft)] text-neutral-900 font-sans;
+  }
+}
+
+/* react-big-calendar — thème léger type Airbnb */
+.rbc-calendar {
+  @apply rounded-2xl border border-neutral-200 bg-white overflow-hidden shadow-sm;
+}
+.rbc-header {
+  @apply py-3 text-xs font-semibold uppercase tracking-wide text-neutral-500 border-b border-neutral-100;
+}
+.rbc-today {
+  @apply bg-rose-50/80;
+}
+.rbc-off-range-bg {
+  @apply bg-neutral-50/50;
+}
+.rbc-event {
+  @apply rounded-md border-0 text-xs font-medium px-1 py-0.5;
+}
+.rbc-event:focus {
+  @apply outline-none ring-2 ring-[color:var(--color-brand)]/30;
+}
+.rbc-toolbar {
+  @apply flex flex-wrap items-center gap-3 mb-4 px-1;
+}
+.rbc-toolbar button {
+  @apply rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-800 hover:border-neutral-400 hover:shadow-sm transition;
+}
+.rbc-toolbar button.rbc-active {
+  @apply border-neutral-900 bg-neutral-900 text-white;
+}
+.rbc-month-view {
+  @apply border-t border-neutral-100;
+}
+.rbc-day-bg.rbc-today {
+  @apply bg-rose-50/60;
+}
